@@ -76,7 +76,7 @@ Make sure the required env variables are defined.
             "rules": {
             "default": [
                 ["add", "::username", "_S.username"],
-                ["add, "::email", "_S.email"],
+                ["add", "::email", "_S.email"],
                 ["if", ["eq", "_S._deleted", true],
                 ["add", "::deleted", true],
                 ["add", "::deleted", false]]
@@ -93,9 +93,15 @@ Make sure the required env variables are defined.
 
 ## Expected payload:
 ```
-    {
-	"email": "this.is@email.com",
-	"username": "userGithub007",
-	"deleted": false
-    }
+    [{
+        "_id": "niceness",
+        "email": "this.is@email.com",
+	    "username": "userGithub007",
+	    "deleted": false
+    },{
+        "_id": "niceness2",
+        "email": "this.is2@email.com",
+        "username": "userGithub008",
+        "deleted": false
+    }]
 ```
